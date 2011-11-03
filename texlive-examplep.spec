@@ -1,3 +1,9 @@
+# revision 16916
+# category Package
+# catalog-ctan /macros/latex/contrib/examplep
+# catalog-date 2010-02-04 09:03:57 +0100
+# catalog-license gpl
+# catalog-version 0.04
 Name:		texlive-examplep
 Version:	0.04
 Release:	1
@@ -63,6 +69,7 @@ appropriate place of the .tex document file.
 %doc %{_texmfdistdir}/doc/latex/examplep/shorthyp_t1xtts.eps
 %doc %{_texmfdistdir}/doc/latex/examplep/shorthyp_t1xtts.pdf
 %doc %{_texmfdistdir}/doc/latex/examplep/wrfiles.pl
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -73,3 +80,5 @@ appropriate place of the .tex document file.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
