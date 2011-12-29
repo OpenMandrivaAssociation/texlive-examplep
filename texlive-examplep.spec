@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Examplep provides sophisticated features for typesetting
@@ -39,20 +37,12 @@ generate the source code, the LaTeX or METAPOST output and the
 compilable example file from a single source embedded into the
 appropriate place of the .tex document file.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -70,7 +60,6 @@ appropriate place of the .tex document file.
 %doc %{_texmfdistdir}/doc/latex/examplep/shorthyp_t1xtts.eps
 %doc %{_texmfdistdir}/doc/latex/examplep/shorthyp_t1xtts.pdf
 %doc %{_texmfdistdir}/doc/latex/examplep/wrfiles.pl
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -81,5 +70,3 @@ appropriate place of the .tex document file.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
