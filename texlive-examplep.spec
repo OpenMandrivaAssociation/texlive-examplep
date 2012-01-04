@@ -6,7 +6,7 @@
 # catalog-version 0.04
 Name:		texlive-examplep
 Version:	0.04
-Release:	1
+Release:	2
 Summary:	Verbatim phrases and listings in LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/examplep
