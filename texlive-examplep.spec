@@ -70,3 +70,17 @@ appropriate place of the .tex document file.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.04-2
++ Revision: 751673
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.04-1
++ Revision: 718396
+- texlive-examplep
+- texlive-examplep
+- texlive-examplep
+- texlive-examplep
+
