@@ -1,18 +1,12 @@
-# revision 16916
-# category Package
-# catalog-ctan /macros/latex/contrib/examplep
-# catalog-date 2010-02-04 09:03:57 +0100
-# catalog-license gpl
-# catalog-version 0.04
 Name:		texlive-examplep
-Version:	0.04
-Release:	12
+Version:	55265
+Release:	1
 Summary:	Verbatim phrases and listings in LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/examplep
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/examplep.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/examplep.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/examplep.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/examplep.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -38,12 +32,12 @@ compilable example file from a single source embedded into the
 appropriate place of the .tex document file.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -63,24 +57,10 @@ appropriate place of the .tex document file.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.04-2
-+ Revision: 751673
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.04-1
-+ Revision: 718396
-- texlive-examplep
-- texlive-examplep
-- texlive-examplep
-- texlive-examplep
-
