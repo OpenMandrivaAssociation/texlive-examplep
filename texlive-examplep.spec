@@ -1,6 +1,6 @@
 Name:		texlive-examplep
 Version:	55265
-Release:	1
+Release:	2
 Summary:	Verbatim phrases and listings in LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/examplep
